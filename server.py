@@ -75,7 +75,8 @@ def register():
     if (len(user) > 0):
         session['user'] = user[0]
         print session['user']
-        return render_template("success.html")
+        # I change this to prevent reoccurance of the post method 
+        return redirect("/success")
 
 @app.route('/success', methods = ['GET'])
 def success():
